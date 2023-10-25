@@ -21,11 +21,17 @@
 
       <p>Total value {{totalValue}}</p>
 
-      <p>{{sayMessage()}}</p>
+      <!-- HTML template binding -->
+      <p>{{sayMessage() | uppercase}}</p>
+
+      <!-- With arguments -->
+      <p>Cookie cost: {{cookieCost | currency : '#blah' : 4}}</p>
 
       <button ng-click="feedMe()">Feed Me</button>
 
-      <img ng-src="{{stateOfHungry}}" alt="">
+      <br />
+
+      <img ng-src="{{stateOfHungry}}" alt="" />
     </div>
   </body>
 </html>

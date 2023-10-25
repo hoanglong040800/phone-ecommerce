@@ -7,17 +7,27 @@ const mapStateHungryPng = {
 const AppController = ($scope, $filter) => {
   $scope.name = "";
   $scope.totalValue = 0;
-  $scope.stateOfHungry = mapStateHungryPng.hungry
+  $scope.stateOfHungry = mapStateHungryPng.hungry;
+  $scope.cookieCost = 0.45;
+
+  /*
+   * Functions
+   */
 
   $scope.displayNumeric = () => {
     $scope.totalValue = calculateNumericOfString($scope.name);
   };
 
   $scope.upper = () => {
-    $scope.name = $filter("uppercase")($scope.name);
+    const { name } = $scope;
+
+    $scope.name = $filter("uppercase")(name);
   };
 
-  $scope.sayMessage = () => "My dog is so cute";
+  $scope.sayMessage = () => {
+    const msg = "My dog is so cute";
+    return msg.replace("cute", "adorable");
+  };
 
   $scope.feedMe = () => {
     $scope.stateOfHungry = mapStateHungryPng.full;
