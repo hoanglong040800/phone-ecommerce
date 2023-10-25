@@ -7,9 +7,14 @@
 
     <!-- source code -->
     <script src="app.module.js"></script>
+    <script src="app.controller.js"></script>
   </head>
 
-  <body ng-app="myApp">
-    <div ng-view></div>
+  <body ng-app="appModule">
+    <div ng-controller="AppController">
+      <button ng-click="showNumberOfWatcher()">Show number of watchers</button>
+
+      <button ng-click="countOnce()">Up once Counter</button>
+    </div>
   </body>
 </html>
