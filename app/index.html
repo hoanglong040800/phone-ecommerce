@@ -1,37 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <title>AngularJS App</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+
     <script src="app.module.js"></script>
-    <script src="app.controller.js"></script>
+    <script src="counter/counter.module.js"></script>
+    <script src="counter/counter.controller.js"></script>
   </head>
 
   <body ng-app="myApp">
-    <div ng-controller="appController">
-      <div>
-        Your name:
-        <input
-          type="text"
-          ng-model="name"
-          ng-keyup="displayNumeric()"
-          ng-blur="upper()"
-        />
-      </div>
+    <a href="counter">Counter</a>
 
-      <p>Total value {{totalValue}}</p>
-
-      <!-- HTML template binding -->
-      <p>{{sayMessage() | uppercase}}</p>
-
-      <!-- With arguments -->
-      <p>Cookie cost: {{cookieCost | currency : '#blah' : 4}}</p>
-
-      <button ng-click="feedMe()">Feed Me</button>
-
-      <br />
-
-      <img ng-src="{{stateOfHungry}}" alt="" />
-    </div>
+    <div ng-view></div>
   </body>
 </html>

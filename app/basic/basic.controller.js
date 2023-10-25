@@ -4,7 +4,7 @@ const mapStateHungryPng = {
   full: "https://www.shutterstock.com/image-vector/walking-full-stomach-man-cartoon-260nw-362321831.jpg",
 };
 
-const AppController = ($scope, $filter) => {
+const BasicController = ($scope, $filter) => {
   $scope.name = "";
   $scope.totalValue = 0;
   $scope.stateOfHungry = mapStateHungryPng.hungry;
@@ -36,4 +36,4 @@ const AppController = ($scope, $filter) => {
   const calculateNumericOfString = (string) => string.length;
 };
 
-angular.module("myApp").controller("appController", AppController);
+angular("basicModule").controller("basicController", BasicController);
