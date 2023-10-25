@@ -1,7 +1,7 @@
 {
   "license": "UNLICENSED",
   "scripts": {
-    "start": "lite-server"
+    "dev": "lite-server"
   },
   "devDependencies": {
     "lite-server": "^2.6.1"

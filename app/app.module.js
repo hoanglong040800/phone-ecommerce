@@ -1,7 +1,11 @@
-const myApp = angular.module("myApp", ["ngRoute", "counterModule"]);
+const myApp = angular.module("myApp", ["ngRoute"]);
 
-myApp.config("$routeProvider", ($routeProvider) => {
-  $routeProvider.when("/counter", {
-    templateUrl: "<p>Counter</p>",
-  });
-});
+myApp.config([
+  "$routeProvider",
+  
+  function ($routeProvider) {
+    $routeProvider.when("/counter", {
+      template: "<p>Counter</p>",
+    });
+  },
+]);
