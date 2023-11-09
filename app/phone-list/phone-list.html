@@ -1,4 +1,15 @@
-<div ng-repeat="phone in $ctrl.phones">
-  <h6>{{phone.name}}</h6>
+<label>Search</label>
+
+<!-- binding input to var -->
+<input type="text" ng-model="$ctrl.textSearch" />
+
+<!-- access data in component using $ctrl.data -->
+<!-- for normal directive just use data -->
+<!-- | filter: means it will use filter based on next value -->
+<div
+  ng-repeat="phone in $ctrl.phones
+            | filter:$ctrl.textSearch"
+>
+  <h4>{{phone.name}}</h4>
   <p>{{phone.desc}}</p>
 </div>

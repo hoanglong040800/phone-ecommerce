@@ -7,16 +7,16 @@ angular.module("phoneList").component("phoneList", {
 function controller() {
   this.phones = [
     {
-      name: "abc",
-      desc: "xyz",
+      name: "Xiaomi",
+      desc: "Xiaomi phones are popular for their affordability and impressive features. They offer great value for your money, with sleek designs and powerful hardware. For example, the Xiaomi Mi 11 boasts a high-quality camera, fast processor, and a stunning display, all at a reasonable price.",
     },
     {
-      name: "def",
-      desc: "ghi",
+      name: "Iphone",
+      desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur at eaque voluptatum minima autem, minus quaerat pariatur reprehenderit nobis delectus?",
     },
     {
-      name: "klm",
-      desc: "nop",
+      name: "Samsung",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique id assumenda dolorum repellat sit sint accusantium fugit, natus quasi minus ipsam dolore voluptas omnis tempora?",
     },
   ];
 }
