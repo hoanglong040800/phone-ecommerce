@@ -21,7 +21,12 @@
   ng-repeat="phone in $ctrl.phones
             | filter: $ctrl.textSearch
             | orderBy: $ctrl.sortCategory"
+  style="margin-top: 1rem"
 >
+  <a href="#!/phones/{{phone.id}}">
+    <img src="{{phone.images[0]}}" alt="{{phone.title}}" width="150px" />
+  </a>
+
   <h4>{{phone.title}}</h4>
   <p>{{phone.description}}</p>
 </div>
