@@ -5,13 +5,23 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
 
+    <!-- MAIN -->
     <script src="app.module.js"></script>
+    <script src="app.config.js"></script>
 
+
+    <!-- PHONE LIST -->
     <script src="phone-list/phone-list.module.js"></script>
     <script src="phone-list/phone-list.cpn.js"></script>
+
+    <!-- PHONE DETAIL -->
+    <script src="phone-detail/phone-detail.module.js"></script>
+    <script src="phone-detail/phone-detail.cpn.js"></script>
   </head>
 
   <body>
-    <phone-list></phone-list>
+    <h1>Phonecat App</h1>
+
+    <div ng-view></div>
   </body>
 </html>
