@@ -14,6 +14,19 @@
   </select>
 </div>
 
+<div>
+  <button ng-click="$ctrl.toggleShowAddProduct()">Toggle Add Product</button>
+</div>
+
+<hr />
+
+<phone-create
+  ng-show="$ctrl.showAddProduct"
+  text="Hello"
+></phone-create>
+
+<hr>
+
 <!-- access data in component using $ctrl.data -->
 <!-- for normal directive just use data -->
 <!-- | filter: means it will use filter based on next value -->
