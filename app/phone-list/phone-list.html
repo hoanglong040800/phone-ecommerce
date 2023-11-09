@@ -10,7 +10,7 @@
 
   <select ng-model="$ctrl.sortCategory">
     <option value="id">Newest</option>
-    <option value="name">Alphabet</option>
+    <option value="title">Alphabet</option>
   </select>
 </div>
 
@@ -22,6 +22,6 @@
             | filter: $ctrl.textSearch
             | orderBy: $ctrl.sortCategory"
 >
-  <h4>{{phone.name}}</h4>
-  <p>{{phone.desc}}</p>
+  <h4>{{phone.title}}</h4>
+  <p>{{phone.description}}</p>
 </div>
