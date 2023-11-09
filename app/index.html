@@ -1,23 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" ng-app="phonecatApp">
   <head>
     <title>AngularJS App</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
 
-    <!-- ROUTE: main -->
     <script src="app.module.js"></script>
-    <script src="app.controller.js"></script>
+
+    <script src="./phone-list/phone-list.cpn.js"></script>
   </head>
 
-  <body ng-app="appModule">
-    <div ng-controller="AppController">
-      
-      <div ng-repeat="phone in phones">
-        <h6>{{phone.name}}</h6>
-        <p>{{phone.desc}}</p>
-      </div>
-
-    </div>
+  <body>
+    <phone-list></phone-list>
   </body>
 </html>
