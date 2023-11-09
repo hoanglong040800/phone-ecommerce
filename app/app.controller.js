@@ -1,18 +1,18 @@
-const AppController = ($scope) => {
-  $scope.counter = 0;
-
-  $scope.showNumberOfWatcher = () => {
-    console.log("number of watchers: ", $scope.$$wathersCount);
-  };
-
-  $scope.countOne = () => {
-    $scope.counter = 1;
-  };
-
-  $scope.$watch("counter", (newValue, oldValue) => {
-    console.log("old", oldValue);
-    console.log("new", newValue);
-  });
+const controller = ($scope) => {
+  $scope.phones = [
+    {
+      name: 'abc',
+      desc: 'xyz'
+    },
+    {
+      name: 'def',
+      desc: 'ghi'
+    },
+    {
+      name: 'klm',
+      desc: 'nop'
+    }
+  ]
 };
 
-angular.module("appModule").controller("AppController", AppController);
+angular.module("appModule").controller("AppController", controller);

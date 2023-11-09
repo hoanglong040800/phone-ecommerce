@@ -5,16 +5,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
 
-    <!-- source code -->
+    <!-- ROUTE: main -->
     <script src="app.module.js"></script>
     <script src="app.controller.js"></script>
   </head>
 
   <body ng-app="appModule">
     <div ng-controller="AppController">
-      <button ng-click="showNumberOfWatcher()">Show number of watchers</button>
+      
+      <div ng-repeat="phone in phones">
+        <h6>{{phone.name}}</h6>
+        <p>{{phone.desc}}</p>
+      </div>
 
-      <button ng-click="countOnce()">Up once Counter</button>
     </div>
   </body>
 </html>
