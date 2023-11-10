@@ -1,22 +1,35 @@
 angular.module("phoneCreate").component("phoneCreate", {
   templateUrl: "phone-create/phone-create.html",
-  controller: [controller],
+  controller: ["$http", controller],
   bindings: {
     text: "@",
+    phones: "=",
   },
 });
 
-function controller() {
-  this.inputTitle = "";
-  this.inputDesc = "";
+function controller($http) {
+  const ctrl = this;
+  ctrl.inputTitle = "";
+  ctrl.inputDesc = "";
 
-  this.$onInit = function () {
+  ctrl.$onInit = function () {
     // binded data is not available immediately
-    console.log(this.text);
+    console.log(ctrl.text);
+
+    // ajax need some time to binding
+    setTimeout(() => {
+      console.log(ctrl.phones);
+    }, [1000]);
   };
 
-  this.createNewProduct = function () {
-    console.log(this.inputTitle);
-    console.log(this.inputDesc);
+  ctrl.createNewProduct = function () {
+    $http
+      .post("https://dummyjson.com/products/add", {
+        title: ctrl.inputTitle,
+        description: ctrl.inputDesc,
+      })
+      .then(({ data }) => {
+        ctrl.phones.unshift(data);
+      });
   };
 }

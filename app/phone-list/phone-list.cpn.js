@@ -12,7 +12,7 @@ function controller($http) {
     this.showAddProduct = !this.showAddProduct;
   };
 
-  $http.get("https://dummyjson.com/products").then((res) => {
+  $http.get("https://dummyjson.com/products?limit=5").then((res) => {
     this.phones = res.data.products;
   });
 }

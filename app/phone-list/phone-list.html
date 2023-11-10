@@ -23,9 +23,10 @@
 <phone-create
   ng-show="$ctrl.showAddProduct"
   text="Hello"
+  phones="$ctrl.phones"
 ></phone-create>
 
-<hr>
+<hr />
 
 <!-- access data in component using $ctrl.data -->
 <!-- for normal directive just use data -->
@@ -33,7 +34,7 @@
 <div
   ng-repeat="phone in $ctrl.phones
             | filter: $ctrl.textSearch
-            | orderBy: $ctrl.sortCategory"
+            | orderBy: $ctrl.sortCategory : true"
   style="margin-top: 1rem"
 >
   <a href="#!/phones/{{phone.id}}">
