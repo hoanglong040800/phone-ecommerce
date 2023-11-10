@@ -5,14 +5,22 @@ angular.module("phoneList").component("phoneList", {
 });
 
 function controller($http) {
-  this.sortCategory = "id";
-  this.showAddProduct = true;
+  const ctrl = this;
 
-  this.toggleShowAddProduct = function () {
-    this.showAddProduct = !this.showAddProduct;
+  ctrl.sortCategory = "id";
+  ctrl.showAddProduct = true;
+
+  ctrl.toggleShowAddProduct = function () {
+    ctrl.showAddProduct = !ctrl.showAddProduct;
   };
 
   $http.get("https://dummyjson.com/products?limit=5").then((res) => {
-    this.phones = res.data.products;
+    ctrl.phones = res.data.products;
   });
+
+  ctrl.handleClickDelete = function (id) {
+    $http.delete(`https://dummyjson.com/products/${id}`).then((res) => {
+      ctrl.phones = ctrl.phones.filter((phone) => phone.id !== id);
+    });
+  };
 }

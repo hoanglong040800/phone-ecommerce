@@ -18,15 +18,13 @@
   <button ng-click="$ctrl.toggleShowAddProduct()">Toggle Add Product</button>
 </div>
 
-<hr />
+<div ng-show="$ctrl.showAddProduct">
+  <hr />
 
-<phone-create
-  ng-show="$ctrl.showAddProduct"
-  text="Hello"
-  phones="$ctrl.phones"
-></phone-create>
+  <phone-create text="Hello" phones="$ctrl.phones"></phone-create>
 
-<hr />
+  <hr />
+</div>
 
 <!-- access data in component using $ctrl.data -->
 <!-- for normal directive just use data -->
@@ -44,4 +42,8 @@
   <h4>{{phone.title}}</h4>
   <p>{{phone.description}}</p>
   <p>Rating: {{phone.rating | checkmark }}</p>
+
+  <button ng-click="$ctrl.handleClickDelete(phone.id)">🗑️</button>
+
+  <hr />
 </div>
